@@ -1,0 +1,1 @@
+.*(tell me|tell me about|what is|what is the|) *(how is|status of|health of) *(my|) *(juniper device) (?P<input_id>.+)
