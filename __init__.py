@@ -16,7 +16,9 @@ class Juniper_skill(MycroftSkill):
     def __init__(self):
         super(Juniper_skill, self).__init__(name="Juniper_skill")
 
-    @intent_handler(IntentBuilder("Juniper_device").require("Query").require("Juniper").require("input_id"))
+    @intent_handler(IntentBuilder("Juniper_device")
+                    .require("Query").require("Juniper").require("input_id")
+                    .optionally("Prefix").build())
     def handle_intent(self, message):
         # Extract what the user asked about
         device_id = message.data.get("input_id")
